@@ -34,7 +34,7 @@
     <div class="max-w-5xl mx-auto">
         <header class="mb-8 text-center">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">2026年 残りスケジュール</h1>
-            <p class="text-gray-600">各週の予定と重要イベント</p>
+            <p class="text-gray-600">各週の予定と重要イベント（自動保存されます）</p>
             
             <!-- 追加用タグエリア（ドラッグ元） -->
             <div class="mt-6 bg-white p-4 rounded-xl shadow-sm border border-gray-200 mx-auto max-w-3xl">
@@ -73,59 +73,55 @@
                     <h2 class="text-xl font-bold text-blue-800">6月</h2>
                 </div>
                 <div class="p-3 space-y-2">
-                    <!-- 1週目 -->
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">1週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-06-1" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">ざわさん合流</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">ざわさん合流</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
-                    <!-- 2週目 -->
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">2週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-06-2" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
-                    <!-- 3週目 -->
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">3週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-06-3" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">西城さん合宿</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">西城さん合宿</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
-                    <!-- 4週目 -->
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">4週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-06-4" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">西城さん合宿</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">西城さん合宿</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
@@ -140,57 +136,57 @@
                 <div class="p-3 space-y-2">
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">1週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-07-1" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">西城さん合宿終わり予定</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">西城さん合宿終わり予定</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">2週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-07-2" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0 bg-red-50/50 -mx-3 px-3">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">3週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-07-3" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo font-bold cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">この辺でウィズにやめること伝える</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">この辺でウィズにやめること伝える</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">4週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-07-4" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
@@ -205,53 +201,53 @@
                 <div class="p-3 space-y-2">
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">1週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-08-1" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">きずなFC開始</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">きずなFC開始</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0 bg-gray-50/50 -mx-3 px-3">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">2週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-08-2" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-holiday cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">休み</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">休み</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">3週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-08-3" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">4週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-08-4" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
@@ -266,53 +262,53 @@
                 <div class="p-3 space-y-2">
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">1週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-09-1" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">2週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-09-2" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">3週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-09-3" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">4週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-09-4" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
@@ -327,61 +323,61 @@
                 <div class="p-3 space-y-2">
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">1週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-10-1" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">2週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-10-2" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0 bg-blue-50/50 -mx-3 px-3">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">3週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-10-3" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-wiz cursor-grab group">
                                 <span class="tag-text">ウィズ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo font-bold cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">ウィズ終了</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">ウィズ終了</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">4週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-10-4" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-memo cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">西城さんバイバイ</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">西城さんバイバイ</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
@@ -396,53 +392,53 @@
                 <div class="p-3 space-y-2">
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">1週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-11-1" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">2週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-11-2" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">3週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-11-3" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">4週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-11-4" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
@@ -457,49 +453,49 @@
                 <div class="p-3 space-y-2">
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">1週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-12-1" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">2週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-12-2" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">3週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-12-3" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                              <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-rings cursor-grab group">
                                 <span class="tag-text">リングス</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs tag-kizuna cursor-grab group">
                                 <span class="tag-text">きずな</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-start border-b border-gray-100 pb-2 last:border-0 last:pb-0 bg-gray-50/50 -mx-3 px-3">
                         <div class="w-16 font-medium text-gray-500 pt-2 shrink-0">4週目</div>
-                        <div class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
+                        <div id="zone-12-4" class="week-dropzone flex-1 flex flex-wrap gap-2 items-center min-h-[40px] rounded border-2 border-dashed border-transparent hover:border-gray-200 p-1.5 transition-colors">
                             <div class="schedule-tag inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs tag-holiday cursor-grab group">
-                                <span class="tag-text cursor-text hover:underline" onclick="editMemo(this, event)">休み</span>
-                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100" onclick="this.parentElement.remove()">&times;</button>
+                                <span class="tag-text cursor-text hover:underline" onclick="window.editMemo(this, event)">休み</span>
+                                <button class="delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none">&times;</button>
                             </div>
                         </div>
                     </div>
@@ -509,105 +505,257 @@
         </div>
     </div>
 
-    <!-- ドラッグ＆ドロップと編集のロジック -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. ヘッダーの「追加用タグ」の設定（ドラッグ元）
-            new Sortable(document.getElementById('source-tags'), {
-                group: {
-                    name: 'shared',
-                    pull: 'clone', // 移動ではなく複製（クローン）する
-                    put: false     // ここには戻せない
-                },
-                animation: 150,
-                sort: false, // 元の場所では並べ替えない
+    <!-- Firebase連携とメインロジック -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // 環境設定の読み込み
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        let firebaseConfig = null;
+        try {
+            firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        } catch (e) {
+            console.warn('Firebase config is not available.');
+        }
+
+        let db, auth;
+        let currentUser = null;
+
+        // --- Firebase初期化とデータ同期 ---
+        if (firebaseConfig) {
+            const app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+
+            const initAuth = async () => {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            };
+
+            onAuthStateChanged(auth, async (user) => {
+                currentUser = user;
+                if (user) {
+                    await loadSchedule();
+                }
             });
 
-            // 2. 各週のエリアの設定（ドロップ先）
+            initAuth();
+        }
+
+        // スケジュールをクラウドに保存
+        window.saveSchedule = async function() {
+            if (!currentUser || !db) return;
+            
+            const scheduleData = {};
+            const dropzones = document.querySelectorAll('.week-dropzone');
+            
+            dropzones.forEach((zone) => {
+                const zoneId = zone.id;
+                const tags = Array.from(zone.querySelectorAll('.schedule-tag')).map(tag => {
+                    const classList = Array.from(tag.classList);
+                    // 色やスタイルを決めるクラスを特定
+                    const typeClass = classList.find(c => c.startsWith('tag-') && c !== 'tag-text');
+                    const textElement = tag.querySelector('.tag-text');
+                    const isBold = classList.includes('font-bold') || (textElement && textElement.classList.contains('font-bold'));
+                    
+                    return {
+                        type: typeClass,
+                        text: textElement ? textElement.innerText : '',
+                        isBold: isBold
+                    };
+                });
+                scheduleData[zoneId] = tags;
+            });
+
+            try {
+                const docRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'scheduleData', 'mySchedule');
+                await setDoc(docRef, { data: JSON.stringify(scheduleData) });
+            } catch (e) {
+                console.error("Error saving document: ", e);
+            }
+        };
+
+        // クラウドからスケジュールを読み込み、画面を復元
+        async function loadSchedule() {
+            if (!currentUser || !db) return;
+            try {
+                const docRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'scheduleData', 'mySchedule');
+                const docSnap = await getDoc(docRef);
+                
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    if (data && data.data) {
+                        const scheduleData = JSON.parse(data.data);
+                        restoreScheduleToDOM(scheduleData);
+                    }
+                } else {
+                    // クラウドにデータが無い（初回起動時）は現在の初期状態を保存
+                    window.saveSchedule();
+                }
+            } catch (e) {
+                console.error("Error loading document: ", e);
+            }
+        }
+
+        // 保存されたデータからタグ要素を再構築
+        function restoreScheduleToDOM(scheduleData) {
             const dropzones = document.querySelectorAll('.week-dropzone');
             dropzones.forEach(zone => {
-                new Sortable(zone, {
-                    group: 'shared',
-                    animation: 150,
-                    ghostClass: 'sortable-ghost',
-                    // ドラッグが乗った時のエフェクト
-                    onDragEnter: function(evt) { evt.to.classList.add('drag-over'); },
-                    onDragLeave: function(evt) { evt.to.classList.remove('drag-over'); },
-                    onDrop: function(evt) { evt.to.classList.remove('drag-over'); },
+                zone.innerHTML = ''; // 既存のタグをクリア
+                const zoneId = zone.id;
+                const tagsData = scheduleData[zoneId] || [];
+                
+                tagsData.forEach(data => {
+                    const tag = createTagElement(data.type, data.text, data.isBold);
+                    zone.appendChild(tag);
+                });
+            });
+        }
+
+        // 新しいタグ要素（DOM）を生成する関数
+        function createTagElement(typeClass, text, isBold = false) {
+            const item = document.createElement('div');
+            item.className = `schedule-tag inline-flex items-center gap-1 px-2.5 py-1 text-xs group cursor-grab ${typeClass}`;
+            if (isBold) item.classList.add('font-bold');
+            
+            if (typeClass === 'tag-memo' || typeClass === 'tag-holiday') {
+                item.classList.add('rounded-full');
+            } else {
+                item.classList.add('rounded');
+            }
+
+            const textSpan = document.createElement('span');
+            textSpan.className = 'tag-text';
+            textSpan.innerText = text;
+
+            // 特記事項などの場合は編集可能にする
+            if (typeClass === 'tag-memo' || typeClass === 'tag-holiday') {
+                textSpan.classList.add('cursor-text', 'hover:underline');
+                textSpan.setAttribute('onclick', 'window.editMemo(this, event)');
+            }
+            
+            item.appendChild(textSpan);
+
+            // 削除ボタン
+            const delBtn = document.createElement('button');
+            delBtn.innerHTML = '&times;';
+            delBtn.className = 'delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none';
+            item.appendChild(delBtn);
+
+            return item;
+        }
+
+        // --- ドラッグ＆ドロップ (SortableJS) の設定 ---
+        
+        // 追加用タグエリア
+        new Sortable(document.getElementById('source-tags'), {
+            group: {
+                name: 'shared',
+                pull: 'clone', 
+                put: false     
+            },
+            animation: 150,
+            sort: false, 
+        });
+
+        // 各週のエリア
+        const dropzones = document.querySelectorAll('.week-dropzone');
+        dropzones.forEach(zone => {
+            new Sortable(zone, {
+                group: 'shared',
+                animation: 150,
+                ghostClass: 'sortable-ghost',
+                onDragEnter: function(evt) { evt.to.classList.add('drag-over'); },
+                onDragLeave: function(evt) { evt.to.classList.remove('drag-over'); },
+                onDrop: function(evt) { evt.to.classList.remove('drag-over'); },
+                
+                onAdd: function (evt) {
+                    const item = evt.item;
+                    evt.to.classList.remove('drag-over');
                     
-                    // アイテムがドロップされた時の処理
-                    onAdd: function (evt) {
-                        const item = evt.item;
-                        evt.to.classList.remove('drag-over');
-                        
-                        // --- 上部の大きめタグを、週用の小さめタグのスタイルに変換 ---
-                        item.classList.remove('px-3', 'py-1.5', 'text-sm', 'shadow-sm', 'font-medium');
-                        item.classList.add('px-2.5', 'py-1', 'text-xs', 'group');
-                        
-                        // 特記事項と休み以外は四角くする
-                        if (!item.classList.contains('tag-memo') && !item.classList.contains('tag-holiday')) {
-                            item.classList.remove('rounded-full');
-                            item.classList.add('rounded');
-                        }
+                    // スタイル変換
+                    item.classList.remove('px-3', 'py-1.5', 'text-sm', 'shadow-sm', 'font-medium');
+                    item.classList.add('px-2.5', 'py-1', 'text-xs', 'group');
+                    
+                    if (!item.classList.contains('tag-memo') && !item.classList.contains('tag-holiday')) {
+                        item.classList.remove('rounded-full');
+                        item.classList.add('rounded');
+                    }
 
-                        // アイコン（メガホンマーク等）があれば削除
-                        const icon = item.querySelector('.source-icon');
-                        if (icon) icon.remove();
+                    const icon = item.querySelector('.source-icon');
+                    if (icon) icon.remove();
 
-                        // ×ボタン（削除ボタン）を追加
-                        if (!item.querySelector('.delete-btn')) {
-                            const delBtn = document.createElement('button');
-                            delBtn.innerHTML = '&times;';
-                            delBtn.className = 'delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none';
-                            delBtn.onclick = function() { item.remove(); };
-                            item.appendChild(delBtn);
-                        }
+                    if (!item.querySelector('.delete-btn')) {
+                        const delBtn = document.createElement('button');
+                        delBtn.innerHTML = '&times;';
+                        delBtn.className = 'delete-btn hidden group-hover:inline-block ml-1 font-bold opacity-70 hover:opacity-100 focus:outline-none';
+                        item.appendChild(delBtn);
+                    }
 
-                        // --- 特記事項や休みの文字編集機能を追加 ---
-                        const textSpan = item.querySelector('.tag-text');
-                        if (textSpan) {
-                            // クリックを検知できるようにする
-                            textSpan.classList.remove('pointer-events-none');
+                    const textSpan = item.querySelector('.tag-text');
+                    if (textSpan) {
+                        textSpan.classList.remove('pointer-events-none');
+                        if (item.classList.contains('tag-memo') || item.classList.contains('tag-holiday')) {
+                            textSpan.classList.add('cursor-text', 'hover:underline');
+                            textSpan.setAttribute('onclick', 'window.editMemo(this, event)');
                             
-                            if (item.classList.contains('tag-memo') || item.classList.contains('tag-holiday')) {
-                                textSpan.classList.add('cursor-text', 'hover:underline');
-                                textSpan.onclick = function(e) {
-                                    editMemo(this, e);
-                                };
-                                
-                                // 特記事項を追加した直後は、自動的に文字入力画面を出す
-                                if (item.classList.contains('tag-memo')) {
-                                    setTimeout(() => {
-                                        editMemo(textSpan, null, true);
-                                    }, 50);
-                                }
+                            // 特記事項の追加直後は入力画面を出す
+                            if (item.classList.contains('tag-memo')) {
+                                setTimeout(() => {
+                                    window.editMemo(textSpan, null, true);
+                                }, 50);
                             }
                         }
                     }
-                });
+                },
+                onSort: function (evt) {
+                    // 並び替え・ドロップ時に保存
+                    setTimeout(() => {
+                        if (window.saveSchedule) window.saveSchedule();
+                    }, 100);
+                }
             });
         });
 
-        // テキストを編集する関数
+        // --- イベントの登録 ---
+
+        // 全体のクリック監視 (削除ボタン用)
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.delete-btn')) {
+                const tag = e.target.closest('.schedule-tag');
+                if (tag) {
+                    tag.remove();
+                    // 削除後すぐ保存
+                    if (window.saveSchedule) window.saveSchedule();
+                }
+            }
+        });
+
+        // テキスト編集機能
         window.editMemo = function(element, event = null, isNew = false) {
-            // ドラッグとクリックイベントの衝突を防ぐ
             if (event) event.stopPropagation();
             
             const currentText = element.innerText;
-            // 新規追加された「特記事項」の場合は入力欄を空にしておく
             const defaultText = (isNew && currentText === "特記事項") ? "" : currentText;
             
             const newText = prompt("内容を入力してください:", defaultText);
             
             if (newText !== null && newText.trim() !== "") {
-                // 入力があれば更新
                 element.innerText = newText.trim();
+                // 編集後に保存
+                if (window.saveSchedule) window.saveSchedule();
             } else if (isNew && (newText === null || newText.trim() === "")) {
-                // 新規追加でキャンセルされた場合や、空欄にした場合はタグ自体を消す
+                // 新規追加でキャンセルされた場合はタグごと消去
                 element.closest('.schedule-tag').remove();
+                if (window.saveSchedule) window.saveSchedule();
             }
         };
+
     </script>
 </body>
 </html>
