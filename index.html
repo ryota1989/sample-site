@@ -34,7 +34,7 @@
     <div class="max-w-5xl mx-auto">
         <header class="mb-8 text-center">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">2026年 残りスケジュール</h1>
-            <p class="text-gray-600">各週の予定と重要イベント（自動保存されます）</p>
+            <p class="text-gray-600">各週の予定と重要イベント（自動保存されます）<span id="save-status" class="ml-2 text-sm transition-opacity duration-300"></span></p>
             
             <!-- 追加用タグエリア（ドラッグ元） -->
             <div class="mt-6 bg-white p-4 rounded-xl shadow-sm border border-gray-200 mx-auto max-w-3xl">
@@ -511,17 +511,22 @@
         import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // 環境設定の読み込み
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        // 環境設定の読み込み（より確実な方法に変更）
+        const appId = (typeof window !== 'undefined' && window.__app_id) ? window.__app_id : 'default-app-id';
         let firebaseConfig = null;
         try {
-            firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+            if (typeof window !== 'undefined' && window.__firebase_config) {
+                firebaseConfig = JSON.parse(window.__firebase_config);
+            } else if (typeof __firebase_config !== 'undefined') {
+                firebaseConfig = JSON.parse(__firebase_config);
+            }
         } catch (e) {
             console.warn('Firebase config is not available.');
         }
 
         let db, auth;
         let currentUser = null;
+        let isDataLoaded = false; // クラウドからの読み込みが完了したかどうかのフラグ
 
         // --- Firebase初期化とデータ同期 ---
         if (firebaseConfig) {
@@ -530,8 +535,15 @@
             db = getFirestore(app);
 
             const initAuth = async () => {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
+                let token = null;
+                if (typeof window !== 'undefined' && window.__initial_auth_token) {
+                    token = window.__initial_auth_token;
+                } else if (typeof __initial_auth_token !== 'undefined') {
+                    token = __initial_auth_token;
+                }
+
+                if (token) {
+                    await signInWithCustomToken(auth, token);
                 } else {
                     await signInAnonymously(auth);
                 }
@@ -547,9 +559,36 @@
             initAuth();
         }
 
+        // 画面に保存状況を表示する関数
+        function showSaveStatus(status) {
+            const statusEl = document.getElementById('save-status');
+            if (!statusEl) return;
+            
+            if (status === 'saving') {
+                statusEl.innerText = ' - 保存中...';
+                statusEl.className = 'ml-2 text-sm text-blue-500 font-bold opacity-100 transition-opacity duration-300';
+            } else if (status === 'saved') {
+                statusEl.innerText = ' - 保存完了';
+                statusEl.className = 'ml-2 text-sm text-green-500 font-bold opacity-100 transition-opacity duration-300';
+                // 2秒後に文字を薄く消す
+                setTimeout(() => {
+                    if (statusEl.innerText === ' - 保存完了') {
+                        statusEl.classList.remove('opacity-100');
+                        statusEl.classList.add('opacity-0');
+                    }
+                }, 2000);
+            } else if (status === 'error') {
+                statusEl.innerText = ' - 保存失敗';
+                statusEl.className = 'ml-2 text-sm text-red-500 font-bold opacity-100 transition-opacity duration-300';
+            }
+        }
+
         // スケジュールをクラウドに保存
         window.saveSchedule = async function() {
-            if (!currentUser || !db) return;
+            // ロードが完了していない状態（ページ開いた直後）では保存処理を行わない！
+            if (!currentUser || !db || !isDataLoaded) return;
+            
+            showSaveStatus('saving');
             
             const scheduleData = {};
             const dropzones = document.querySelectorAll('.week-dropzone');
@@ -575,8 +614,10 @@
             try {
                 const docRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'scheduleData', 'mySchedule');
                 await setDoc(docRef, { data: JSON.stringify(scheduleData) });
+                showSaveStatus('saved');
             } catch (e) {
                 console.error("Error saving document: ", e);
+                showSaveStatus('error');
             }
         };
 
@@ -594,11 +635,14 @@
                         restoreScheduleToDOM(scheduleData);
                     }
                 } else {
-                    // クラウドにデータが無い（初回起動時）は現在の初期状態を保存
+                    // クラウドにデータが無い（本当に初回起動時）は現在の初期状態を保存
+                    isDataLoaded = true; // 保存を許可
                     window.saveSchedule();
                 }
+                isDataLoaded = true; // クラウドからの読み込みが完了
             } catch (e) {
                 console.error("Error loading document: ", e);
+                isDataLoaded = true; // エラー時も操作はできるようにフラグを立てる
             }
         }
 
@@ -712,12 +756,16 @@
                             }
                         }
                     }
+                    
+                    // 追加時に保存を明示的に実行
+                    setTimeout(() => { if (window.saveSchedule) window.saveSchedule(); }, 100);
                 },
-                onSort: function (evt) {
-                    // 並び替え・ドロップ時に保存
-                    setTimeout(() => {
-                        if (window.saveSchedule) window.saveSchedule();
-                    }, 100);
+                // 並び替え完了時や別のリストに移動した時に保存を実行
+                onUpdate: function (evt) {
+                    setTimeout(() => { if (window.saveSchedule) window.saveSchedule(); }, 100);
+                },
+                onRemove: function (evt) {
+                    setTimeout(() => { if (window.saveSchedule) window.saveSchedule(); }, 100);
                 }
             });
         });
